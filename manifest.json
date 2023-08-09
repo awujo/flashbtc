@@ -1,7 +1,7 @@
 {
     "name": "Flash BTC Transaction Core",
     "short_name": "FlashBTC",
-    "start_url": ".",
+    "start_url": "/flashbtc/",
     "display": "standalone",
     "background_color": "#000000",
     "description": "Flash BTC Transaction Core",
