@@ -144,6 +144,34 @@
             })
         }
     </script>
+
+    <script>
+  let deferredPrompt;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Show a custom installation prompt if desired
+    // Display a button or banner that triggers installation
+  });
+
+  // Example: Show a button that triggers the installation prompt
+  const installButton = document.getElementById('installButton');
+  installButton.addEventListener('click', () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    }
+  });
+</script>
+
 </body>
 </body>
 </html>
