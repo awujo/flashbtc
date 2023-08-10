@@ -157,8 +157,8 @@
   });
 
   // Example: Show a button that triggers the installation prompt
-  const installButton = document.getElementById('installButton');
-  installButton.addEventListener('click', () => {
+  // const installButton = document.getElementById('installButton');
+window.addEventListener('load', ()=> {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choiceResult) => {
